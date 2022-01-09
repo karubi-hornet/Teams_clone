@@ -7,7 +7,7 @@ import { createMuiTheme, ThemeProvider } from '@mui/material/styles'
 import MyHeader from './components/MyHeader';
 import MyMenu from './components/MyMenu';
 
-const drawerWidth = 90;
+const drawerWidth = 75;
 
 const theme = createMuiTheme({
   palette: {
@@ -15,7 +15,7 @@ const theme = createMuiTheme({
       main: "#464775"
     },
     secondary: {
-      main: "#6E6F7E"
+      main: "#EBEBEB"
     },
     info: {
       main: "#ffffff"
@@ -36,7 +36,7 @@ class App extends Component {
             '& .MuiDrawer-paper': {
               width: drawerWidth,
               boxSizing: 'border-box',
-              backgroundColor: '#6E6F7E',
+              backgroundColor: '#EBEBEB',
             },
           }}
           variant="permanent"

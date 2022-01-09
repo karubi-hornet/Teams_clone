@@ -1,22 +1,29 @@
+import { styled, alpha } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import MyIcon from '../parts/MyIcon';
 
+const MenuIconWrapper = styled('div')(({ theme }) => ({
+  color: 'gray',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
 function MyMenu() {
   return (
     <List>
       {/* ここの '' の部分を入れるのはなんとかしたい... */}
-      {['', '', '', '', 'Activity', 'Chat', 'Team', 'Calendar', 'Call'].map((text, index) => (
+      {['', '', '', '', 'Activity', 'Chat', 'Team', 'Calendar', 'Call', 'File'].map((text, index) => (
         <ListItem button key={text}
         style={{
           textAlign:'center',
           justifyContent:'center',
           }}>
-          <div>
+          <MenuIconWrapper>
           <MyIcon name={text}/>
-          <Typography style={{color:'white'}}>{text}</Typography>
-          </div>
+          <Typography>{text}</Typography>
+          </MenuIconWrapper>
         </ListItem>
       ))}
     </List>
