@@ -3,18 +3,16 @@ import { Typography } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import MyIcon from '../parts/MyIcon';
-
 const MenuIconWrapper = styled('div')(({ theme }) => ({
   color: 'gray',
   alignItems: 'center',
   justifyContent: 'center',
 }));
-
 function MyMenu() {
   return (
     <List>
       {/* ここの '' の部分を入れるのはなんとかしたい... */}
-      {['', '', '', '', 'Activity', 'Chat', 'Team', 'Calendar', 'Call', 'File'].map((text, index) => (
+      {['Activity', 'Chat', 'Team', 'Calendar', 'Call', 'File', 'Planner'].map((text, index) => (
         <ListItem button key={text}
         style={{
           textAlign:'center',
@@ -29,5 +27,4 @@ function MyMenu() {
     </List>
   );
 }
-
 export default MyMenu;
