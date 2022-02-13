@@ -5,7 +5,7 @@ import MyFeed from '../parts/MyFeed';
 
 const SubPageWrapper = styled('div')(({ theme }) => ({
   backgroundColor: '#eeeeee',
-  marginTop: '60px',
+  marginTop: '5vh',
 }));
 function MySubPage() {
   return (

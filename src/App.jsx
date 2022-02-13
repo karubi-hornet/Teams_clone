@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Box } from '@mui/material';
+
+import { styled } from '@mui/material/styles';
 import { Grid } from '@mui/material'
-import Drawer from '@mui/material/Drawer';
-import { createMuiTheme, ThemeProvider } from '@mui/material/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import MyHeader from './components/MyHeader';
 import MyMenu from './components/MyMenu';
 import MySubPage from './components/MySubPage';
 import MyMainPage from './components/MyMainPage';
 
-const drawerWidth = 75;
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#464775"
@@ -22,34 +21,30 @@ const theme = createMuiTheme({
     }
   }
 });
+
+const AppWrapper = styled('div')(({ theme }) => ({
+  maxHeight: '95vh',
+}));
+
+
 class App extends Component {
   render(){
     return (
       <ThemeProvider theme={theme}>
-        <MyHeader />
-        <Grid container>
-            <Drawer
-              sx={{
-                width: drawerWidth,
-                flexShrink: 0,
-                '& .MuiDrawer-paper': {
-                  width: drawerWidth,
-                  boxSizing: 'border-box',
-                  backgroundColor: '#EBEBEB',
-                },
-              }}
-              variant="permanent"
-              anchor="left"
-            >
-              <MyMenu />
-            </Drawer>
-          <Grid item xs={2}>
-            <MySubPage />
+        <AppWrapper>
+          <MyHeader />
+          <Grid container xs={12}>
+            <Grid item xs={0.7} style={{backgroundColor: '#EBEBEB', }}>
+                <MyMenu />
+              </Grid>
+            <Grid item xs={2.3}>
+              <MySubPage />
+            </Grid>
+            <Grid item xs={9}>
+              <MyMainPage />
+            </Grid>
           </Grid>
-          <Grid item xs={9}>
-            <MyMainPage />
-          </Grid>
-      </Grid>
+        </AppWrapper>
       </ThemeProvider>
       )}
 }
