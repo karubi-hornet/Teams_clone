@@ -11,7 +11,6 @@ const MenuIconWrapper = styled('div')(({ theme }) => ({
 function MyMenu() {
   return (
     <List>
-      {/* ここの '' の部分を入れるのはなんとかしたい... */}
       {['Activity', 'Chat', 'Team', 'Calendar', 'Call', 'File', 'Planner'].map((text, index) => (
         <ListItem button key={text}
         style={{

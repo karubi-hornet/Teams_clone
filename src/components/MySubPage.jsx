@@ -1,24 +1,16 @@
 import { styled, alpha } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import MyFeed from '../parts/MyFeed';
+
 const SubPageWrapper = styled('div')(({ theme }) => ({
-  backgroundColor: 'yellow',
+  backgroundColor: '#eeeeee',
+  marginTop: '60px',
 }));
 function MySubPage() {
   return (
      <SubPageWrapper>
-    <List>
-      {['AAAAAAAAAAAAAAAaa', 'AAAAAAAAAAAAAAAaa', 'AAAAAAAAAAAAAAAaa', 'AAAAAAAAAAAAAAAaa'].map((text, index) => (
-        <ListItem button key={text}
-        style={{
-          textAlign:'center',
-          justifyContent:'center',
-          }}>
-          {text}
-        </ListItem>
-      ))}
-    </List>
+      <MyFeed />
     </SubPageWrapper>
   );
 }
